@@ -1,0 +1,165 @@
+/* src/styles/hotel-global.css */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700&display=swap");
+
+:root {
+  --emerald: #195f4e;
+  --jungle: #0f3d34;
+  --olive: #7b6f57;
+  --card: #fdf9f0;
+  --paper: #fffef9;
+  --text: #1c1c1c;
+  --muted: #6e6b63;
+  --line: #e9e2d4;
+  --danger: #c0392b;
+  --ok: #1f8a66;
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(15, 61, 52, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 90% -20%, rgba(25, 95, 78, 0.08), transparent 60%),
+    radial-gradient(900px 500px at -10% 120%, rgba(123, 111, 87, 0.08), transparent 60%),
+    var(--paper);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 10px;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--jungle);
+  letter-spacing: 0.2px;
+}
+
+p {
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+
+/* Form controls */
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font: inherit;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--emerald);
+  box-shadow: 0 0 0 3px rgba(25, 95, 78, 0.15);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Buttons */
+button {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font: 600 14px/1 "Manrope", sans-serif;
+  background: var(--emerald);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.06s ease, filter 0.2s ease, background 0.2s ease;
+}
+
+button:hover {
+  filter: brightness(1.03);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Secondary button look for inline button groups */
+button + button {
+  background: #fff;
+  color: var(--jungle);
+  border-color: var(--line);
+}
+
+/* Card-like blocks (works with your current simple div blocks) */
+.card,
+[role="article"] {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Simple spacing helpers (optional to use in any file) */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--jungle);
+}
+
+.badge.ok {
+  background: #eefaf5;
+  border-color: #cdeedf;
+  color: var(--ok);
+}
+
+.badge.danger {
+  background: #fff0ee;
+  border-color: #f3c5bf;
+  color: var(--danger);
+}
